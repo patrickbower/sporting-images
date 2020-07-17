@@ -1,2 +1,2 @@
-import Image from "./image-container";
+import Image from "./image-view";
 export default Image;
