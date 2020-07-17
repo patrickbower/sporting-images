@@ -1,9 +1,13 @@
 import React from 'react';
 import Header from './components/header';
+import Image from './components/image';
 
 function App() {
   return (
-    <Header />
+    <React.Fragment>
+      <Header />
+      <Image />
+    </React.Fragment>
   );
 }
 
