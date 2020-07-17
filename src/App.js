@@ -1,13 +1,13 @@
 import React from 'react';
+import Stage from './components/stage';
 import Header from './components/header';
-import Image from './components/image';
 
 function App() {
   return (
-    <React.Fragment>
+    <div className="app">
       <Header />
-      <Image />
-    </React.Fragment>
+      <Stage />
+    </div>
   );
 }
 
