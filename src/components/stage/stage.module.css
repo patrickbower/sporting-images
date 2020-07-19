@@ -1,5 +1,42 @@
 .stage {
-  width: 800px;
-  height: 500px;
+  /* width: 800px;
+  height: 500px; */
   position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5em;
+  flex-grow: 1;
+}
+
+/* .stage :nth-child(1) {
+  order: 2;
+}
+.stage :nth-child(2) {
+  order: 3;
+}
+.stage :nth-child(3) {
+  order: 1;
+} */
+
+.stage:after,
+.stage:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 100%;
+  background-color: var(--color-mint-green);
+  position: absolute;
+  left: 50%;
+  top: 0em;
+  z-index: -2;
+}
+
+.stage:before {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-light-grey);
+  left: 50%;
+  top: calc(0% - 10px);
+  z-index: -1;
+  transform: rotate(45deg);
 }
