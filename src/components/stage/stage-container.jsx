@@ -6,7 +6,7 @@ import Title from "../title";
 import User from "../user";
 
 // import RandomImage from "../../utils/random-image";
-import mockImage from "../../utils/random-image/mock-random-image";
+import mockImage from "../../utils/random-image/mock-random-image-2";
 
 const Stage = (props) => {
   const [image, setImage] = useState(undefined);
@@ -23,11 +23,13 @@ const Stage = (props) => {
     setImage(mockImage);
   }, []);
 
+  console.log(image);
+
   if (image) {
     return (
       <div className={Styles.stage}>
         <Title description={image.description} />
-        <Image src={image.urls.regular} altText={image.alt_description} />
+        <Image src={image.urls.regular} alt={image.alt_description} />
         <User name={image.user.name} link={image.user.links.html} />
         <Card />
       </div>
