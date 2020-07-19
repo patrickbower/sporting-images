@@ -14,8 +14,9 @@
 }
 
 .user:hover {
-  color: var(--color-mint-green);
-  border-color: var(--color-mint-green);
+  color: var(--color-black);
+  border-color: var(--color-black);
+  text-decoration: underline;
 }
 
 .user:after {

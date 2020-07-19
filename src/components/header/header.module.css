@@ -1,5 +1,5 @@
 .masthead {
-  font-size: 5em;
+  font-size: calc(44px + (86 - 44) * ((100vw - 300px) / (1600 - 300)));
   margin-top: 0.5em;
   color: var(--color-mint-green);
   position: relative;
