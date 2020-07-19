@@ -28,7 +28,7 @@ const Stage = (props) => {
       <div className={Styles.stage}>
         <Title description={image.description} />
         <Image src={image.urls.regular} altText={image.alt_description} />
-        <User name={image.user.name} />
+        <User name={image.user.name} link={image.user.links.html} />
         <Card />
       </div>
     );

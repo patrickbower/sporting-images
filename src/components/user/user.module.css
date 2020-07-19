@@ -1,12 +1,7 @@
-.button {
-  background: none;
-  color: inherit;
+.user {
   border: 0.2em solid var(--color-dark-grey);
   border-right-width: 2.4em;
   padding: 0.5em 2em 0.5em 1em;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 1.5em;
@@ -15,14 +10,16 @@
   display: inline-block;
   align-self: start;
   margin: 20px 0;
+  text-decoration: none;
+  color: inherit;
 }
 
-button:hover {
+.user:hover {
   color: var(--color-mint-green);
   border-color: var(--color-mint-green);
 }
 
-button:after {
+.user:after {
   content: url(../../images/arrow.svg);
   width: 50px;
   height: 50px;
