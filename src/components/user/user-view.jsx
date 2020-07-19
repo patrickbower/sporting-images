@@ -1,11 +1,16 @@
 import React from "react";
 import Styles from "./user.module.css";
+import { motion } from "framer-motion";
 
 const User = (props) => {
   return (
-    <a href={props.link} className={Styles.user}>
+    <motion.a
+      whileHover={{ scale: 1.2 }}
+      href={props.link}
+      className={Styles.user}
+    >
       {props.name}
-    </a>
+    </motion.a>
   );
 };
 
