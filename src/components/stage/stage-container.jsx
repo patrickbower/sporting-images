@@ -5,7 +5,7 @@ import Card from "../card";
 import Title from "../title";
 import User from "../user";
 
-// import RandomImage from '../../utils/random-image';
+// import RandomImage from "../../utils/random-image";
 import mockImage from "../../utils/random-image/mock-random-image";
 
 const Stage = (props) => {
@@ -13,14 +13,13 @@ const Stage = (props) => {
   const [error, setErrors] = useState(false);
   // const searchSettings = {
   //   query: "sports",
-  //   orientation: "landscape"
-  // }
+  //   orientation: "landscape",
+  // };
 
   useEffect(() => {
     // RandomImage(searchSettings)
-    //   .then(res => setImage(res))
-    //   .catch(err => setErrors(err));
-    // setImage({urls: {full: "https://dummyimage.com/600x400/000/fff"}})
+    //   .then((res) => setImage(res))
+    //   .catch((err) => setErrors(err));
     setImage(mockImage);
   }, []);
 
@@ -28,7 +27,7 @@ const Stage = (props) => {
     return (
       <div className={Styles.stage}>
         <Title description={image.description} />
-        <Image src={image.urls.full} />
+        <Image src={image.urls.regular} />
         <User name={image.user.name} />
         <Card />
       </div>
