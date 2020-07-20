@@ -14,7 +14,7 @@ const Title = (props) => {
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
       >
-        {props.description ? props.description : "Untitled"}
+        {props.description}
       </motion.h1>
     </AnimatePresence>
   );
