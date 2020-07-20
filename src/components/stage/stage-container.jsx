@@ -6,8 +6,8 @@ import Title from "../title";
 import User from "../user";
 import Refresh from "../refresh";
 
-// import RandomImage from "../../utils/random-image";
-import mockImage from "../../utils/random-image/mock-random-image-2";
+import RandomImage from "../../utils/random-image";
+// import mockImage from "../../utils/random-image/mock-random-image-2";
 
 const Stage = (props) => {
   const [image, setImage] = useState(undefined);
@@ -19,10 +19,10 @@ const Stage = (props) => {
   const random = Math.floor(Math.random() * 3) + 1;
 
   const fetchImage = () => {
-    // RandomImage(searchSettings)
-    //   .then((res) => setImage(res))
-    //   .catch((err) => setErrors(err));
-    setImage(mockImage);
+    RandomImage(searchSettings)
+      .then((res) => setImage(res))
+      .catch((err) => setErrors(err));
+    // setImage(mockImage);
   };
 
   useEffect(() => {
@@ -30,9 +30,10 @@ const Stage = (props) => {
   }, []);
 
   if (image) {
+    console.log("repaint");
     return (
       <div style={{ "--color-theme": `${image.color}` }}>
-        <Refresh />
+        <Refresh refresh={() => fetchImage()} />
         <div className={`${Styles.stage} layout-${random}`}>
           <Title description={image.description} />
           <Image src={image.urls.regular} alt={image.alt_description} />

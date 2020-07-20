@@ -8,6 +8,7 @@ const ImageView = (props) => (
     src={props.src}
     alt={props.alt}
     positionTransition
+    layout
     initial={{ opacity: 0, y: 100 }}
     animate={{ opacity: 1, y: 0 }}
     exit={{ opacity: 0, scale: 0.5, transition: { duration: 0.2 } }}

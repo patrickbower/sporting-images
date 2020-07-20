@@ -1,10 +1,10 @@
 import React from "react";
 import Styles from "./refresh.module.css";
 
-const Refresh = () => {
+const Refresh = (props) => {
   const handleClick = (event) => {
     event.preventDefault();
-    console.log("clicked", event.target);
+    props.refresh();
   };
 
   return (
