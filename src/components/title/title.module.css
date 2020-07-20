@@ -8,5 +8,4 @@
   color: var(--color-theme);
   filter: invert(100%);
   font-size: calc(44px + (86 - 44) * ((100vw - 300px) / (1600 - 300)));
-  margin-top: -0.75em;
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Styles from "./stage.module.css";
+import "./stage-layouts.css";
 import Image from "../image";
 import Title from "../title";
 import User from "../user";
 
 // import RandomImage from "../../utils/random-image";
-import mockImage from "../../utils/random-image/mock-random-image-2";
+import mockImage from "../../utils/random-image/mock-random-image";
 
 const Stage = (props) => {
   const [image, setImage] = useState(undefined);
@@ -14,6 +15,7 @@ const Stage = (props) => {
     query: "sports",
     orientation: "landscape",
   };
+  const random = Math.floor(Math.random() * 3) + 1;
 
   useEffect(() => {
     // RandomImage(searchSettings)
@@ -25,7 +27,7 @@ const Stage = (props) => {
   if (image) {
     return (
       <div
-        className={Styles.stage}
+        className={`${Styles.stage} layout-${random}`}
         style={{ "--color-theme": `${image.color}` }}
       >
         <Title

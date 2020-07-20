@@ -8,27 +8,22 @@
   font-weight: 900;
   text-transform: uppercase;
   position: relative;
-  margin-top: -0.75em;
   text-decoration: none;
   z-index: 3;
 }
 
-.arrow {
-  width: 2rem;
-  height: 2rem;
+.user:after {
+  content: "";
+  width: 55px;
+  height: 35px;
   display: inline-block;
+  mask: url(../../images/arrow.svg) no-repeat 50% 50%;
+  mask-size: cover;
+  background-color: var(--color-theme);
+  filter: invert(100%);
   position: absolute;
   left: 100%;
-  top: -10px;
-  z-index: 1;
-  padding: 1rem;
-}
-
-.svg {
-  fill: var(--color-theme);
-  filter: invert(100%);
-  width: 100%;
-  height: auto;
+  top: 15px;
 }
 
 @media only screen and (max-width: 600px) {
