@@ -7,9 +7,10 @@ import User from "../user";
 import Refresh from "../refresh";
 
 import RandomImage from "../../utils/random-image";
-// import mockImage from "../../utils/random-image/mock-random-image-2";
+// import mockImage1 from "../../utils/random-image/mock-random-image";
+// import mockImage2 from "../../utils/random-image/mock-random-image-2";
 
-const Stage = (props) => {
+const Stage = () => {
   const [image, setImage] = useState(undefined);
   const [error, setErrors] = useState(false);
   const searchSettings = {
@@ -22,7 +23,6 @@ const Stage = (props) => {
     RandomImage(searchSettings)
       .then((res) => setImage(res))
       .catch((err) => setErrors(err));
-    // setImage(mockImage);
   };
 
   useEffect(() => {
@@ -43,9 +43,17 @@ const Stage = (props) => {
     );
   } else if (error) {
     console.error(error);
-    return <p>Error</p>;
+    return (
+      <div className="center">
+        <p className="error">Error!</p>
+      </div>
+    );
   } else {
-    return <p>Loading...</p>;
+    return (
+      <div className="center">
+        <p className="loading">Loading...</p>
+      </div>
+    );
   }
 };
 
