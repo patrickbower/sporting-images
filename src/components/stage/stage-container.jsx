@@ -23,6 +23,9 @@ const Stage = () => {
     RandomImage(searchSettings)
       .then((res) => setImage(res))
       .catch((err) => setErrors(err));
+
+    // setImage(mockImage1);
+    // setErrors(false);
   };
 
   useEffect(() => {
@@ -31,7 +34,7 @@ const Stage = () => {
   }, []);
 
   if (image) {
-    console.log("repaint");
+    console.log(image);
     return (
       <div style={{ "--color-theme": `${image.color}` }}>
         <Refresh refresh={() => fetchImage()} />
