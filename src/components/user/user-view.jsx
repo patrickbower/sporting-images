@@ -12,6 +12,7 @@ const User = (props) => {
         animate={{ opacity: 1, x: 0 }}
         className={Styles.user}
         layout
+        target="_blank"
       >
         {props.name}
       </motion.a>
