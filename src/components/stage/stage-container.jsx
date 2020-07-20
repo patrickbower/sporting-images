@@ -4,11 +4,13 @@ import "./stage-layouts.css";
 import Image from "../image";
 import Title from "../title";
 import User from "../user";
+import Refresh from "../refresh";
 
-// import RandomImage from "../../utils/random-image";
-import mockImage from "../../utils/random-image/mock-random-image";
+import RandomImage from "../../utils/random-image";
+// import mockImage1 from "../../utils/random-image/mock-random-image";
+// import mockImage2 from "../../utils/random-image/mock-random-image-2";
 
-const Stage = (props) => {
+const Stage = () => {
   const [image, setImage] = useState(undefined);
   const [error, setErrors] = useState(false);
   const searchSettings = {
@@ -17,36 +19,41 @@ const Stage = (props) => {
   };
   const random = Math.floor(Math.random() * 3) + 1;
 
+  const fetchImage = () => {
+    RandomImage(searchSettings)
+      .then((res) => setImage(res))
+      .catch((err) => setErrors(err));
+  };
+
   useEffect(() => {
-    // RandomImage(searchSettings)
-    //   .then((res) => setImage(res))
-    //   .catch((err) => setErrors(err));
-    setImage(mockImage);
+    fetchImage();
   }, []);
 
   if (image) {
+    console.log("repaint");
     return (
-      <div
-        className={`${Styles.stage} layout-${random}`}
-        style={{ "--color-theme": `${image.color}` }}
-      >
-        <Title
-          description={image.description}
-          style={{ "--color-theme": `${image.color}` }}
-        />
-        <Image src={image.urls.regular} alt={image.alt_description} />
-        <User
-          name={image.user.name}
-          link={image.user.links.html}
-          style={{ "--color-theme": `${image.color}` }}
-        />
+      <div style={{ "--color-theme": `${image.color}` }}>
+        <Refresh refresh={() => fetchImage()} />
+        <div className={`${Styles.stage} layout-${random}`}>
+          <Title description={image.description} />
+          <Image src={image.urls.regular} alt={image.alt_description} />
+          <User name={image.user.name} link={image.user.links.html} />
+        </div>
       </div>
     );
   } else if (error) {
     console.error(error);
-    return <p>Error</p>;
+    return (
+      <div className="center">
+        <p className="error">Error!</p>
+      </div>
+    );
   } else {
-    return <p>Loading...</p>;
+    return (
+      <div className="center">
+        <p className="loading">Loading...</p>
+      </div>
+    );
   }
 };
 
