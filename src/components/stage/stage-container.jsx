@@ -55,8 +55,10 @@ const Stage = () => {
       <div style={{ "--color-theme": `${image.color}` }}>
         <Refresh refresh={() => refreshImage()} />
         <div className={`${Styles.stage} layout-${randomIntRange(3)}`}>
-          <Title description={image.description} />
-          <Image src={image.url} alt={image.alt_description} />
+          <Title
+            description={image.description ? image.description : image.alt}
+          />
+          <Image src={image.url} alt={image.alt} />
           <User name={image.name} link={image.link} />
         </div>
       </div>
