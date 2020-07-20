@@ -1,3 +1,4 @@
+// clean data and only return what we need
 const stageMiddlewareClean = (data) => {
   const imageData = [];
   for (var item of data.results) {
