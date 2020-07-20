@@ -1,7 +1,12 @@
 .title {
+  width: 70vw;
+  line-height: 1;
+  padding-top: 0.5em;
   font-size: 4em;
   margin: 0;
-  z-index: 3;
-  color: var(--color-dark-grey);
-  font-family: "selima-regular";
+  z-index: 1;
+  color: var(--color-theme);
+  filter: invert(100%);
+  font-size: calc(44px + (86 - 44) * ((100vw - 300px) / (1600 - 300)));
+  margin-top: -0.75em;
 }

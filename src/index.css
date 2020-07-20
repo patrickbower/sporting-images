@@ -7,40 +7,14 @@
   --color-dark-grey: #4d4d4d;
   --color-white: #ffffff;
   --color-black: rgb(26, 26, 26);
+  --color-theme: #fecb00;
 }
 
 img {
   max-width: 100%;
 }
 
-@font-face {
-  font-family: "selima-regular";
-  src: url("../src/fonts/selima-webfont.woff2") format("woff2"),
-    url("../src/fonts/selima-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-h1,
-h2,
-h3 {
-  color: var(--color-dark-grey);
-}
-
-.app {
-  min-height: 100vh;
-  min-width: 230px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 1em;
-  max-width: 800px;
-  margin: auto;
-}
-
 body {
-  background-color: var(--color-light-grey);
-  color: var(--color-dark-grey);
   margin: 0;
   padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
