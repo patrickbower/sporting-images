@@ -11,7 +11,7 @@ const unsplash = new Unsplash({ accessKey: process.env.REACT_APP_UNSPLASH_API_KE
 */   
 async function getPhoto() {
   const randomPageNumber = Math.floor(Math.random() * 100) + 1;
-  return await unsplash.search.photos("sports", randomPageNumber, 10, { orientation: "portrait" })
+  return await unsplash.search.photos("sports", randomPageNumber, 10, { orientation: "landscape" })
     .then(toJson)
     .then(res => res)
     .catch(err => err);  
