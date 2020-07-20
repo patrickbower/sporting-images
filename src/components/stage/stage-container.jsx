@@ -5,8 +5,8 @@ import Title from "../title";
 import User from "../user";
 import Refresh from "../refresh";
 // utils
-import FetchImageBatch from "../../utils/random-image/fetch";
-import CleanImageBatch from "../../utils/random-image/clean";
+import FetchImageBatch from "../../utils/images/fetch";
+import CleanImageBatch from "../../utils/images/clean";
 import randomIntRange from "../../utils/micro/randomIntRange";
 // styles
 import Styles from "./stage.module.css";
