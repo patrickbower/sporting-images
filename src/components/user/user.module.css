@@ -25,9 +25,3 @@
   left: 100%;
   top: 15px;
 }
-
-@media only screen and (max-width: 600px) {
-  .user {
-    transform: scale(0.75);
-  }
-}

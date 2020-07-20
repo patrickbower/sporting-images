@@ -1,19 +1,21 @@
 import React from "react";
 import Styles from "./user.module.css";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const User = (props) => {
   return (
-    <motion.a
-      whileHover={{ scale: 1.2 }}
-      href={props.link}
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      className={Styles.user}
-      layout
-    >
-      {props.name}
-    </motion.a>
+    <AnimatePresence>
+      <motion.a
+        whileHover={{ scale: 1.2 }}
+        href={props.link}
+        initial={{ opacity: 0, x: -100 }}
+        animate={{ opacity: 1, x: 0 }}
+        className={Styles.user}
+        layout
+      >
+        {props.name}
+      </motion.a>
+    </AnimatePresence>
   );
 };
 
