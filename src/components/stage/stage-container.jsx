@@ -50,14 +50,11 @@ const Stage = () => {
 
   // when image data has loaded
   if (image) {
-    console.log(image);
     return (
       <div style={{ "--color-theme": `${image.color}` }}>
         <Refresh refresh={() => refreshImage()} />
         <div className={`${Styles.stage} layout-${randomIntRange(3)}`}>
-          <Title
-            description={image.description ? image.description : image.alt}
-          />
+          <Title description={image.description} />
           <Image src={image.url} alt={image.alt} />
           <User name={image.name} link={image.link} />
         </div>

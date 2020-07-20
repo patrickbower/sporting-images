@@ -2,8 +2,9 @@
 const stageMiddlewareClean = (data) => {
   const imageData = [];
   for (var item of data.results) {
+    const imageDesc = item.description === null ? item.alt_description : item.description;
     imageData.push({
-      description: item.description,
+      description: imageDesc,
       alt: item.alt_description,
       url: item.urls.regular,
       name: item.user.name,
