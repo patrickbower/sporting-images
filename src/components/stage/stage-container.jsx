@@ -7,29 +7,41 @@ import User from "../user";
 import Refresh from "../refresh";
 
 import RandomImage from "../../utils/random-image";
-// import mockImage1 from "../../utils/random-image/mock-random-image";
-// import mockImage2 from "../../utils/random-image/mock-random-image-2";
+import stageMiddlewareClean from "../../utils/random-image/stage-middleware-clean";
 
 const Stage = () => {
+  const [bundle, setBundle] = useState(undefined);
   const [image, setImage] = useState(undefined);
   const [error, setErrors] = useState(false);
-  const searchSettings = {
-    query: "sports",
-    orientation: "landscape",
-  };
   const random = Math.floor(Math.random() * 3) + 1;
 
-  const fetchImage = () => {
-    RandomImage(searchSettings)
-      .then((res) => setImage(res))
-      .catch((err) => setErrors(err));
+  const fetchImageBundle = () => {
+    const searchSettings = {
+      query: "sports",
+      orientation: "landscape",
+    };
 
-    // setImage(mockImage1);
-    // setErrors(false);
+    RandomImage(searchSettings)
+      .then((res) => {
+        const imagesClean = stageMiddlewareClean(res);
+        setBundle(imagesClean);
+        setImage(imagesClean[0]);
+      })
+      .catch((err) => setErrors(err));
+  };
+
+  const refreshImage = () => {
+    let currentIndex = bundle.findIndex((obj) => obj.id === image.id);
+
+    if (currentIndex === bundle.length - 1) {
+      fetchImageBundle();
+    } else {
+      setImage(bundle[currentIndex + 1]);
+    }
   };
 
   useEffect(() => {
-    fetchImage();
+    fetchImageBundle();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -37,11 +49,11 @@ const Stage = () => {
     console.log(image);
     return (
       <div style={{ "--color-theme": `${image.color}` }}>
-        <Refresh refresh={() => fetchImage()} />
+        <Refresh refresh={() => refreshImage()} />
         <div className={`${Styles.stage} layout-${random}`}>
           <Title description={image.description} />
-          <Image src={image.urls.regular} alt={image.alt_description} />
-          <User name={image.user.name} link={image.user.links.html} />
+          <Image src={image.url} alt={image.alt_description} />
+          <User name={image.name} link={image.link} />
         </div>
       </div>
     );
