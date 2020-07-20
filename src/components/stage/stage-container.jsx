@@ -7,6 +7,7 @@ import Refresh from "../refresh";
 // utils
 import RandomImage from "../../utils/random-image";
 import stageMiddlewareClean from "../../utils/random-image/stage-middleware-clean";
+import randomIntRange from "../../utils/micro/randomIntRange";
 // styles
 import Styles from "./stage.module.css";
 import "./stage-layouts.css";
@@ -16,8 +17,6 @@ const Stage = () => {
   const [bundle, setBundle] = useState(undefined);
   const [image, setImage] = useState(undefined);
   const [error, setErrors] = useState(false);
-  // random layout gen TODO: move to utils
-  const random = Math.floor(Math.random() * 3) + 1;
 
   // get batch of images - onload or end of batch
   const fetchImageBundle = () => {
@@ -55,7 +54,7 @@ const Stage = () => {
     return (
       <div style={{ "--color-theme": `${image.color}` }}>
         <Refresh refresh={() => refreshImage()} />
-        <div className={`${Styles.stage} layout-${random}`}>
+        <div className={`${Styles.stage} layout-${randomIntRange(3)}`}>
           <Title description={image.description} />
           <Image src={image.url} alt={image.alt_description} />
           <User name={image.name} link={image.link} />
