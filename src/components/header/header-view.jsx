@@ -4,7 +4,7 @@ import Styles from "./header.module.css";
 const Header = () => {
   return (
     <header>
-      <h1 className={Styles.title}>Random Sports UI</h1>
+      <h1 className={Styles.masthead}>Reactive Interface</h1>
     </header>
   );
 };
