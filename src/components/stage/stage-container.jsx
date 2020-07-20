@@ -5,8 +5,8 @@ import Title from "../title";
 import User from "../user";
 import Refresh from "../refresh";
 // utils
-import RandomImage from "../../utils/random-image";
-import stageMiddlewareClean from "../../utils/random-image/stage-middleware-clean";
+import FetchImageBatch from "../../utils/random-image/fetch";
+import CleanImageBatch from "../../utils/random-image/clean";
 import randomIntRange from "../../utils/micro/randomIntRange";
 // styles
 import Styles from "./stage.module.css";
@@ -20,9 +20,9 @@ const Stage = () => {
 
   // get batch of images - onload or end of batch
   const fetchImageBundle = () => {
-    RandomImage()
+    FetchImageBatch()
       .then((res) => {
-        const imagesClean = stageMiddlewareClean(res);
+        const imagesClean = CleanImageBatch(res);
         setBundle(imagesClean);
         setImage(imagesClean[0]);
       })
