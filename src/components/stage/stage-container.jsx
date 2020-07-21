@@ -64,15 +64,15 @@ const Stage = () => {
   } else if (error) {
     console.error(error);
     return (
-      <div className="center">
-        <p className="error">Error!</p>
+      <div className={Styles.center}>
+        <p className={Styles.error}>Error!</p>
       </div>
     );
     // while you wait for data to load
   } else {
     return (
-      <div className="center">
-        <p className="loading">Loading...</p>
+      <div className={Styles.center}>
+        <p className={Styles.loading}>Loading...</p>
       </div>
     );
   }
