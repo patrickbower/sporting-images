@@ -39,3 +39,12 @@ To support the brief of showing a random “sports” photo from the Unsplash AP
 
 - Node 8.16.0
 - NPM
+
+## Next Steps
+
+With more time I would consider:
+
+- Logic based layouts
+- Logic based animations
+- Abstract state globally
+- Abstract theme to Context
