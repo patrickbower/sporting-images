@@ -13,6 +13,7 @@ To support the brief of showing a random “sports” photo from the Unsplash AP
 ## Features
 
 - JavaScript client-side application
+- Responsive design
 - Batch fetch images (x10 at a time)
 - Randomly select from pre-configured layouts
 - Random theme per image
@@ -23,6 +24,7 @@ To support the brief of showing a random “sports” photo from the Unsplash AP
 
 ## Methodology
 
+- As a prototype this has been developed Chrome
 - File structure keeping related code as close as possible
 - Conventional commit format
 
