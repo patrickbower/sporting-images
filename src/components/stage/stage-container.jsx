@@ -42,7 +42,7 @@ const Stage = () => {
     }
   };
 
-  // useEffect currently only componentDidMount
+  // when component first mounts
   useEffect(() => {
     fetchImageBundle();
     // eslint-disable-next-line react-hooks/exhaustive-deps
