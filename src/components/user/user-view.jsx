@@ -10,6 +10,7 @@ const User = (props) => {
         href={props.link}
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.1 }}
         className={Styles.user}
         layout
         target="_blank"
