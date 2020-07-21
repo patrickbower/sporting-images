@@ -8,7 +8,7 @@ const Refresh = (props) => {
   };
 
   return (
-    <button onClick={handleClick} className={Styles.button}>
+    <button onClick={handleClick} className={Styles.button} autoFocus>
       Refresh
     </button>
   );
