@@ -18,6 +18,12 @@ const Stage = () => {
   const [image, setImage] = useState(undefined);
   const [error, setErrors] = useState(false);
 
+  // when component first mounts
+  useEffect(() => {
+    fetchImageBundle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // get batch of images - onload or end of batch
   const fetchImageBundle = () => {
     FetchImageBatch()
@@ -41,12 +47,6 @@ const Stage = () => {
       setImage(bundle[currentIndex + 1]);
     }
   };
-
-  // when component first mounts
-  useEffect(() => {
-    fetchImageBundle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   // when image data has loaded
   if (image) {
