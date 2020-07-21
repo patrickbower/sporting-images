@@ -28,7 +28,7 @@ const Stage = () => {
   const fetchImageBundle = () => {
     FetchImageBatch()
       .then((res) => {
-        const imagesClean = CleanImageBatch(res);
+        const imagesClean = Array.from(CleanImageBatch(res));
         setBundle(imagesClean);
         setImage(imagesClean[0]);
       })
