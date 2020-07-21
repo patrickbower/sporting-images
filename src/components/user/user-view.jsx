@@ -13,6 +13,7 @@ const User = (props) => {
         className={Styles.user}
         layout
         target="_blank"
+        rel="noopener noreferrer"
       >
         {props.name}
       </motion.a>
