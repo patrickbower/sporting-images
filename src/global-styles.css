@@ -20,15 +20,6 @@ body {
     Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
-.center {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-}
-
-.loading,
-.error {
-  font-size: 1.5em;
-  font-weight: 900;
-  margin: auto;
+*:focus {
+  border: 2px solid red;
 }

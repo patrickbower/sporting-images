@@ -10,9 +10,11 @@ const User = (props) => {
         href={props.link}
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 0.2 }}
         className={Styles.user}
         layout
         target="_blank"
+        rel="noopener noreferrer"
       >
         {props.name}
       </motion.a>
