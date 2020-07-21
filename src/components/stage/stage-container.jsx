@@ -18,11 +18,17 @@ const Stage = () => {
   const [image, setImage] = useState(undefined);
   const [error, setErrors] = useState(false);
 
+  // when component first mounts
+  useEffect(() => {
+    fetchImageBundle();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   // get batch of images - onload or end of batch
   const fetchImageBundle = () => {
     FetchImageBatch()
       .then((res) => {
-        const imagesClean = CleanImageBatch(res);
+        const imagesClean = Array.from(CleanImageBatch(res));
         setBundle(imagesClean);
         setImage(imagesClean[0]);
       })
@@ -42,12 +48,6 @@ const Stage = () => {
     }
   };
 
-  // when component first mounts
-  useEffect(() => {
-    fetchImageBundle();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   // when image data has loaded
   if (image) {
     return (
@@ -64,15 +64,15 @@ const Stage = () => {
   } else if (error) {
     console.error(error);
     return (
-      <div className="center">
-        <p className="error">Error!</p>
+      <div className={Styles.center}>
+        <p className={Styles.error}>Error!</p>
       </div>
     );
     // while you wait for data to load
   } else {
     return (
-      <div className="center">
-        <p className="loading">Loading...</p>
+      <div className={Styles.center}>
+        <p className={Styles.loading}>Loading...</p>
       </div>
     );
   }

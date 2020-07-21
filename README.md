@@ -8,12 +8,12 @@ https://sporting-ui.netlify.app
 
 ## Concept
 
-To support the brief of showing a random “sports” photo
-from the Unsplash API, I continued this theme to create a randomly generated UI. This light-hearted prototype reflects a little of the unpredictable character of sports, but, perhaps aspects could be considered useful for keeping a user interested and drive traffic in new ways.
+To support the brief of showing a random “sports” photo from the Unsplash API, I continued this theme to create a randomly generated UI. This light-hearted creative prototype reflects a little of the unpredictable character of sports, but, perhaps aspects could be considered useful for user-focused design and drive traffic in new ways. A bold design leveraging features (ie: system fonts) helps enable better performance and functionality. The interface is also accessible via the tab key to help all types of users.
 
 ## Features
 
 - JavaScript client-side application
+- Responsive design
 - Batch fetch images (x10 at a time)
 - Randomly select from pre-configured layouts
 - Random theme per image
@@ -24,6 +24,7 @@ from the Unsplash API, I continued this theme to create a randomly generated UI.
 
 ## Methodology
 
+- As a prototype this has been developed using Chrome
 - File structure keeping related code as close as possible
 - Conventional commit format
 

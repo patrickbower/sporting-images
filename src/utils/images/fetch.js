@@ -6,9 +6,13 @@ import randomIntRange from '../micro/randomIntRange';
 const unsplash = new Unsplash({ accessKey: process.env.REACT_APP_UNSPLASH_API_KEY });
 
 /* 
-  Get data batch from a random page.
+  unsplash.photos.getRandomPhoto can only provide 
+  one image per request :(  
+
   Free tier has only 50 requests per hour, 
   so in this case batches works for a prototype.
+
+  Solution is to get data as a batch from a random page.
 */   
 async function getPhoto() {
   return await unsplash.search.photos("sports", randomIntRange(100), 10, { orientation: "landscape" })
